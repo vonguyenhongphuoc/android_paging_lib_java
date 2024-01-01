@@ -29,7 +29,7 @@ public class MyModelImpl implements MyModel {
                 () -> {
         Log.d("MyTagThread getMovies", Thread.currentThread().getName());
         try {
-            Call<MovieDBResponse> call = tmdbService.getPopularMovies(Constant.API_KEY);
+            Call<MovieDBResponse> call = tmdbService.getPopularMovies(Constant.API_KEY, 1);
             Response<MovieDBResponse> response = call.execute();
             Log.d("MyTagThread response", Thread.currentThread().getName());
             if (response.isSuccessful()) {

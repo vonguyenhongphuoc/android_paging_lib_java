@@ -1,7 +1,12 @@
 
 package com.devhp.paging_lib_java_sample.model.entites;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
+
 import java.util.List;
+import java.util.Objects;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -148,5 +153,17 @@ public class Movie {
     public void setVoteCount(Long voteCount) {
         this.voteCount = voteCount;
     }
+
+    public static final DiffUtil.ItemCallback<Movie> CALLBACK = new DiffUtil.ItemCallback<Movie>() {
+        @Override
+        public boolean areItemsTheSame(@NonNull Movie oldItem, @NonNull Movie newItem) {
+            return Objects.equals(oldItem.id, newItem.id);
+        }
+
+        @Override
+        public boolean areContentsTheSame(@NonNull Movie oldItem, @NonNull Movie newItem) {
+            return true;
+        }
+    };
 
 }

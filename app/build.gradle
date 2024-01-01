@@ -26,7 +26,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    buildFeatures{
+    buildFeatures {
         buildConfig = true
         viewBinding = true
     }
@@ -35,7 +35,8 @@ android {
 dependencies {
 
     def retrofitVersion = "2.9.0"
-
+    def paging_version = "3.2.1"
+    def lifecycle_version = "2.6.2"
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
@@ -53,4 +54,10 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor")
 
     implementation("com.github.bumptech.glide:glide:4.16.0")
+
+    implementation "androidx.paging:paging-runtime:$paging_version"
+
+    implementation("androidx.lifecycle:lifecycle-livedata:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycle_version")
+
 }

@@ -10,5 +10,5 @@ import retrofit2.http.Query;
 public interface TMDBService {
 
     @GET("movie/popular")
-    Call<MovieDBResponse> getPopularMovies(@Query("api_key") String apiKey);
+    Call<MovieDBResponse> getPopularMovies(@Query("api_key") String apiKey, @Query("page") long page);
 }
